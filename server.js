@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
 
 app.get('/contato', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'contato.html'));
+  
 });
 
 app.get('/sugestao', (req, res) => {
@@ -28,8 +29,10 @@ app.get('/sugestao', (req, res) => {
   res.send(`
     <h1>Olá, ${nome}!</h1>
     <p>Sua sugestão de ${ingredientes} foi registrada com sucesso!.</p>
-
+    <a href="/">Voltar para o menu</a>
   `);
+
+   
 });
 
 app.post('/contato', (req, res) => {
@@ -44,8 +47,10 @@ app.post('/contato', (req, res) => {
   res.send(`
     <h1>Olá, ${nome}!</h1>
     <p>Seu contato através do email ${email}, com assunto ${assunto} e mensagem ${mensagem} foi recebido com sucesso!.</p>
-
+    <a href="/">Voltar para o menu</a>
   `);
+
+   
 });
 
 app.get('/api/lanches', (req, res) => {
